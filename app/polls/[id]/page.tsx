@@ -49,9 +49,10 @@ export async function generateMetadata(
     const fcMetadata: Record<string, string> = {
         "fc:frame": "vNext",
         "fc:frame:post_url": `${process.env['HOST']}/api/vote?id=${id}`,
-        "fc:frame:image": `${process.env['HOST']}/api/image?id=${id}`,
+        "fc:frame:image": `${process.env['HOST']}/api/chart.png`,
+        "fc:frame:input:text": "Enter your SPL address, press 'share', get 1% ppls trades!"
     };
-    [poll.option1, poll.option2, poll.option3, poll.option4].filter(o => o !== "").map((option, index) => {
+    ["Share", poll.option2, poll.option3, poll.option4].filter(o => o !== "").map((option, index) => {
         fcMetadata[`fc:frame:button:${index + 1}`] = option;
     })
 
@@ -60,7 +61,7 @@ export async function generateMetadata(
         title: poll.title,
         openGraph: {
             title: poll.title,
-            images: [`/api/image?id=${id}`],
+            images: [`https://jare.cake.best/api/chart.png`],
         },
         other: {
             ...fcMetadata,

@@ -68,7 +68,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             if (!poll) {
                 return res.status(400).send('Missing poll ID');
             }
-            const imageUrl = `${process.env['HOST']}/api/image?id=${poll.id}&results=${results ? 'false': 'true'}&date=${Date.now()}${ fid > 0 ? `&fid=${fid}` : '' }`;
+            const imageUrl = `${process.env['HOST']}/api/chart.png`;
             let button1Text = "View Results";
             if (!voted && !results) {
                 button1Text = "Back"

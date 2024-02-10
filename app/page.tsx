@@ -1,3 +1,5 @@
+import React, { FC, useMemo } from 'react';
+
 import {PollCreateForm} from "./form";
 
 export let metadata = {
@@ -27,6 +29,7 @@ function VercelLogo(props: React.SVGProps<SVGSVGElement>) {
 }
 
 export default async function Page() {
+ 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
       <main className="flex flex-col items-center justify-center flex-1 px-4 sm:px-20 text-center">
